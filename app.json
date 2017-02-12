@@ -1,0 +1,20 @@
+{
+	"name": "JU.Results.Notifier",
+	"description": "Automated notifier for results of JU!",
+	"repository": "https://github.com/mayukh18/JU.Results.Notifier",
+	"success_url": "/",
+	"env": {
+		"ACCESS_TOKEN": {
+			"description": "Facebook Access Token",
+			"required": false
+		}
+	},
+	"buildpacks": [
+		{
+			"url": "https://github.com/heroku/heroku-buildpack-python"
+		},
+		{
+      		"url": "https://github.com/stomita/heroku-buildpack-phantomjs"
+    	}
+  	]
+}
