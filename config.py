@@ -9,7 +9,7 @@ DEPARTMENT_FIELD = 'lstDepartmentShow'
 VALIDATION_STRINGS = ['Roll Number', 'EXR']
 EXCLUDES = {'lstCourse':['Certificate / Diploma / Advance Diploma','Undergraduate (Annual System)'],
             'lstSemester':['3rd Semester','4th Semester','5th Semester','6th Semester','7th Semester','Final','3rd & 4th Sem.'],
-            'lstFaculty':['Arts','Int.-disc. Stud.,Law & Mgmnt.']}
+            'lstFaculty':['Arts','Int.-disc. Stud.,Law & Mgmnt.','Science']}
 SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
 
 #heroku config:set PATH=$PATH:vendor/phantomjs/bin

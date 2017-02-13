@@ -1,31 +1,29 @@
-from flask import Flask
-from modules import scraper
-import os
 from time import sleep
-
-
-
-app = Flask(__name__)
+from modules import scraper, clear
 
 def checker():
     print("main checker starts")
     s = scraper()
     s.populate()
     s.navigate(setup=False)
+    return
 
-@app.route('/loop/')
-def loop():
-    checker()
-    sleep(900)
-
-@app.route('/init/')
 def startup():
     print("initializing")
+    clear()
     s = scraper()
     s.populate()
     s.navigate(setup=True)
     print("database created")
+    return
+
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)), debug=True)
+    startup()
+    i=0
+    while True:
+        print("loop {}".format(i))
+        checker()
+        sleep(900)
+        i += 1

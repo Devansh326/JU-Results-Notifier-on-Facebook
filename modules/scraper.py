@@ -18,8 +18,8 @@ EXCLUDES = os.environ.get('EXCLUDES', config.EXCLUDES)
 
 class scraper:
     def __init__(self):
-        #self.driver = webdriver.PhantomJS(executable_path="D:/phantomjs/bin/phantomjs.exe")
-        self.driver = webdriver.PhantomJS()
+        self.driver = webdriver.PhantomJS(executable_path="D:/phantomjs/bin/phantomjs.exe")
+        #self.driver = webdriver.PhantomJS()
         self.driver.get(BASE_URL)
         self.submit_button = self.driver.find_element_by_id('submit1')
         self.options = {}
@@ -82,11 +82,11 @@ class scraper:
 
                 source = self.driver.page_source
                 outBool = check_results(source)
-                #print(outBool, deptName)
+                print(deptName, arguments[3:5])
                 if outBool == True:
+                    print("True")
                     args = copy(arguments)
                     args.append(deptName)
-                    print(deptName, arguments[3:5])
                     take_action(args,setup)
 
                 self.driver.back()
