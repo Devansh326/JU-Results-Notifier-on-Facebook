@@ -1,1 +1,2 @@
-web: python juresults.py
+web: python webapp.py
+cron: python juresults.py
