@@ -19,7 +19,13 @@ def post_to_facebook(details):
 
 def formatter(details):
 
-    message = 'RESULTS OUT\n'+details[6]+'\n'+details[3]+', '+details[4]
+    message = 'RESULTS OUT\n'
+    if details[1]=='Undergraduate (Semester System)':
+        message += 'UG '
+    elif details[1]=='Postgraduate (Semester System)':
+        message += 'PG '
+
+    message += details[6]+'\n'+details[3]+', '+details[4]
     if details[5]!='Regular':
         message += ', Supple'
 
